@@ -6,14 +6,26 @@ let edad = prompt('Ingrese la edad de la persona');
 console.log(edad)
 
 
-edad = parseInt(edad);
+edad = parseFloat(edad);
 console.log(edad)
 //2- Luego evaluar si su edad es de 12 años
-if(  edad == 12   ) {
+if( edad <= 12  ) {
+
+
+    // console.info('Puede pasar')
     //Si la condición se cumple 
     console.log('Si puede ingresar al pelotero')
-} else {
-    console.warn('No puede pasar pq no tiene 12 años')
+
+
+
+
+} 
+else {
+
+    console.warn('No puede ingresar');
+    // console.warn('No puede ingresar');
+
+
 }
     //a- Lo dejo entrar al pelotero
     //b- Le digo que no puede ingresar
