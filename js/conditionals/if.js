@@ -6,7 +6,7 @@ let edad = prompt('Ingrese la edad de la persona');
 console.log(edad)
 
 
-edad = parseFloat(edad);
+edad = parseInt(edad);
 console.log(edad)
 //2- Luego evaluar si su edad es de 12 años
 if( edad <= 12  ) {
