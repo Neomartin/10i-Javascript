@@ -8,8 +8,6 @@ let sumatoriaNotas = 0;
 let cantidadNotas = 0;
 let notaAlumno = prompt('Ingrese la nota del alumno');
 
-console.log(notaAlumno)
-
 while(notaAlumno.toUpperCase() !== 'FIN') {
     const isNotNumber =  isNaN(parseInt(notaAlumno))
     // isNaN (esto es un número)
