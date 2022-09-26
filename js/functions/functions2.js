@@ -9,7 +9,6 @@
 // creamos un div para insertar precio contado
 // creamos un div para insertar precio tarjeta y cuotas
 // Una vez obtenido insertarlo en el Document HTML
-//
 
 
 const priceInput = document.getElementById("price");
@@ -17,36 +16,42 @@ const cashHTML = document.getElementById('cash');
 const tarjetaTotalHTML = document.getElementById('tarjeta-total');
 const tarjetaCuotasHTML = document.getElementById('tarjeta-cuotas') 
 
-function calcularPrecioFinal() {
+function calcularPrecios() {
     // Calcular el precio en base a un valor inicial ingresado
     const precioCosto = priceInput.valueAsNumber; //NaN
-    
-    if(precioCosto) {
-        const precioDolar = 285;
-        const iva = 1.21;
-        const ganancia = 1.30;
-        const interesTarjeta = 1.54;
-    
-    
-        const precioFinalContado = Math.round(precioCosto * precioDolar * iva  * ganancia);
-    
-        const precioFinalTarjeta = Math.round(precioFinalContado * interesTarjeta);
-        const precioCuotaTarjeta12 = Math.round(precioFinalTarjeta / 12);
-    
+    if(precioCosto && precioCosto > 0) {
+
+        const precioFinalContado = calcularPrecioContado(precioCosto);
+        
         cashHTML.innerText = `$ ${precioFinalContado}`;
-        tarjetaTotalHTML.innerHTML = `<strong>$ ${precioFinalTarjeta} </strong>`;
-        tarjetaCuotasHTML.textContent = `El precio de cada cuota en ahora 12 es de $ ${precioCuotaTarjeta12}`
-
-        for(let i = 0; i < 1000; i++ ) {
-            const numeroAleatorio = Math.round(Math.random()*10000);
-            console.log(numeroAleatorio)
-
-        }
+        calcularPrecioTarjeta(precioFinalContado);
     } else {
         alert(`El precio costo no es correcto`)
     }
-
 }
+
+function calcularPrecioContado(costo) {
+    const precioDolar = 285;
+    const iva = 1.25;
+    const ganancia = 1.30;
+    const precioFinalContado = Math.round(costo * precioDolar * iva  * ganancia);
+    return precioFinalContado
+}
+
+function calcularPrecioTarjeta(precioRecibido)  {
+    const interesTarjeta = 1.54;
+    const precioFinalTarjeta = Math.round(precioRecibido * interesTarjeta);
+    tarjetaTotalHTML.innerHTML = `<strong>$ ${precioFinalTarjeta} </strong>`;
+    calcularPrecio12Cuotas(precioFinalTarjeta);
+}
+
+function calcularPrecio12Cuotas(precioTarjetaRecibido) {
+    const precioCuotaTarjeta12 = Math.round(precioTarjetaRecibido / 12);
+    tarjetaCuotasHTML.textContent = `El precio de cada cuota en ahora 12 es de $ ${precioCuotaTarjeta12}`
+}
+
+
+
 
 const miFuncionComoConstante = function() {
     console.log(`Hola desde funci'on como constante`)
