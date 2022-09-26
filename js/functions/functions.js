@@ -2,14 +2,12 @@
 // console.dir(fechaActual)
 const messageHTML = document.getElementById('message')
 
-console.log(messageHTML)
 
 // Definimos la función cuyo especifique la tarea que va a realizar
 function decirFechaActual() {
     //Las acciones que se van a realizar al invocar o llamar a esta función
     const fechaActual = new Date();
     // console.log(fechaActual);
-
 
     let diaMes = fechaActual.getDate();
     if(diaMes < 10) {
