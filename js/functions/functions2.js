@@ -48,6 +48,29 @@ function calcularPrecio12Cuotas(precioTarjetaRecibido) {
     tarjetaCuotasHTML.textContent = `El precio de cada cuota en ahora 12 es de $ ${precioCuotaTarjeta12}`
 }
 
+function calcularPrecioContado(costo) {
+    const precioDolar = 285;
+    const iva = 1.25;
+    const ganancia = 1.30;
+    const precioFinalContado = Math.round(costo * precioDolar * iva  * ganancia);
+    return precioFinalContado
+}
+
+function calcularPrecioTarjeta(precioRecibido)  {
+    const interesTarjeta = 1.54;
+    const precioFinalTarjeta = Math.round(precioRecibido * interesTarjeta);
+    tarjetaTotalHTML.innerHTML = `<strong>$ ${precioFinalTarjeta} </strong>`;
+    calcularPrecio12Cuotas(precioFinalTarjeta);
+}
+
+function calcularPrecio12Cuotas(precioTarjetaRecibido) {
+    const precioCuotaTarjeta12 = Math.round(precioTarjetaRecibido / 12);
+    tarjetaCuotasHTML.textContent = `El precio de cada cuota en ahora 12 es de $ ${precioCuotaTarjeta12}`
+}
+
+
+
+
 const miFuncionComoConstante = function() {
     console.log(`Hola desde funci'on como constante`)
 }
