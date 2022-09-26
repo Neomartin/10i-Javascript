@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/styles.css">
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html">JS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+
+              <a class="nav-link" aria-current="page" href="/pages/functions/functions.html">Functions</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Condicionales
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/pages/conditionals/operators.html">Operadores</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Bucles
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/pages/loops/while.html">While</a></li>
+
+                <li><a class="dropdown-item" href="/pages/loops/for.html">For</a></li>
+
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container-lg">
+    <h1>FUNCIONES JS</h1>
+    <section id="hora">
+      <h2>Hora Actual</h2>
+      <div id="message" class="function-message">
+        Display message
+      </div>
+      <button class="btn btn-success my-3" onclick="decirFechaActual()">Ver hora</button>
+    </section>
+
+    <section id="price-section">
+
+      <h2>Calcular precio final</h2>
+
+      <div class="row">
+        <div class="col-6 bg-light p-3">
+          <!-- Insertamos el nuestro boton e input de datos -->
+          <!-- <form> -->
+          <div class="mb-3 w-100">
+            <label for="price" class="form-label">Importe del producto</label>
+            <input type="number" class="form-control" id="price" placeholder="Ingrese costo en dolares" min="0"
+              max="99999999" size="" required>
+          </div>
+          <div>
+            <button type="submit" class="btn btn-primary" onclick="calcularPrecios()">Calcular</button>
+          </div>
+          <!-- </form> -->
+        </div>
+
+
+
+
+
+        <div class="col-6">
+          <div>
+            <h3>Precio contado</h3>
+            <div id="cash" class="border border-primary">
+              $ 0
+            </div>
+            <div id="tarjeta">
+              Precio tarjeta en 12 cuotas
+              <div id="tarjeta-total">$0</div>
+              <div id="tarjeta-cuotas" class="text-secondary font-xs">$0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </main>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+  <!-- <script src="/js/functions/functions.js"></script> -->
+  <script src="/js/functions/functions2.js"></script>
+</body>
+
+</html>
