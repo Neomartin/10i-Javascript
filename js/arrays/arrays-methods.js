@@ -165,6 +165,8 @@ const sliceArray = () => {
     renderUsers(slicedUsers)
 }
 
+
+
 function filterUsersByStatus(status) {
     const filteredUsers = users.filter(function(usr) {
         if(usr.active === status) {
@@ -179,6 +181,8 @@ function filterUsersByStatus(status) {
 
 const usersListElem = document.getElementById('result');
 
+renderUsers(users);
+
 function renderUsers(usersToRender) {
     usersListElem.innerHTML = '';
     usersToRender.forEach(user => {
@@ -191,7 +195,6 @@ function renderError() {
 }
 
 function searchOneUser(evt) {
-
     //Cuando recibo el evento de apretar la tecla sobre l input, accedo al valor de dicho input y lo guardo
     const searchIDValue = evt.target.valueAsNumber;
     
@@ -204,11 +207,49 @@ function searchOneUser(evt) {
         //return undefined
     })
     // Cuando find no encuentra ningun elemento que cumpla con su busqueda su valor de retorno es undefined
-
     if(userFind) {
         renderUsers([userFind])
     } else {
         renderError()
     }
-    console.log(`userFind`, userFind)
+    console.log(`userFind`, userFind);
 }
+
+function deleteUserByAge(ageToDelete) {
+    //Vamos a buscar el indice de la persona que tenga cierta edad;
+    const usersSaved = users
+    //Buscar en los users que tengan exactamente esa edad;
+
+    //Imprimir la lista de usuarios restantes
+    const indice = usersSaved.findIndex(usr => {
+
+        if(usr.age === ageToDelete) {
+            return true
+        }
+
+        return false
+    });
+
+    if(indice === -1) {
+        console.log('%c No se encontro usuario para borrar', 'background: orange; color: red');
+        return;
+    }
+    //Y borrarlos
+    // HAGO EL BORRADO BASANDOME EN EL INDICE;
+    usersSaved.splice(indice, 1);
+
+    console.log(usersSaved);
+    renderUsers(usersSaved)
+}
+
+function calcularSumaDeEdades() {
+    const sumaTotal = users.reduce((valorAcumulado, usuario) => {
+        //funcion a ejecutar
+            const valor = valorAcumulado + usuario.age;
+            return valor
+        }, 10000)
+        //inicializacion del valorAcumulado
+    console.log(`Suma total`, sumaTotal)
+}
+
+
